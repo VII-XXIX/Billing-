@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gameon Den</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+                border: "hsl(var(--border))",
+                input: "hsl(var(--input))",
+                ring: "hsl(var(--ring))",
+                background: "hsl(var(--background))",
+                foreground: "hsl(var(--foreground))",
+                primary: {
+                    DEFAULT: "hsl(var(--primary))",
+                    foreground: "hsl(var(--primary-foreground))",
+                },
+                secondary: {
+                    DEFAULT: "hsl(var(--secondary))",
+                    foreground: "hsl(var(--secondary-foreground))",
+                },
+                destructive: {
+                    DEFAULT: "hsl(var(--destructive))",
+                    foreground: "hsl(var(--destructive-foreground))",
+                },
+                muted: {
+                    DEFAULT: "hsl(var(--muted))",
+                    foreground: "hsl(var(--muted-foreground))",
+                },
+                accent: {
+                    DEFAULT: "hsl(var(--accent))",
+                    foreground: "hsl(var(--accent-foreground))",
+                },
+                popover: {
+                    DEFAULT: "hsl(var(--popover))",
+                    foreground: "hsl(var(--popover-foreground))",
+                },
+                card: {
+                    DEFAULT: "hsl(var(--card))",
+                    foreground: "hsl(var(--card-foreground))",
+                },
+            },
+             borderRadius: {
+                lg: "var(--radius)",
+                md: "calc(var(--radius) - 2px)",
+                sm: "calc(var(--radius) - 4px)",
+            },
+            keyframes: {
+                 "fade-in": {
+                    "0%": { opacity: '0', transform: 'translateY(-10px)' },
+                    "100%": { opacity: '1', transform: 'translateY(0)' },
+                }
+            },
+            animation: {
+                "fade-in": 'fade-in 0.5s ease-out forwards',
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            :root {
+                --background: 0 0% 98%;
+                --foreground: 224 71.4% 4.1%;
+                --card: 0 0% 100%;
+                --card-foreground: 224 71.4% 4.1%;
+                --popover: 0 0% 100%;
+                --popover-foreground: 224 71.4% 4.1%;
+                --primary: 0 84.2% 60.2%;
+                --primary-foreground: 0 0% 98%;
+                --secondary: 0 0% 94%;
+                --secondary-foreground: 224 71.4% 4.1%;
+                --muted: 0 0% 94%;
+                --muted-foreground: 220 8.9% 45%;
+                --accent: 0 0% 94%;
+                --accent-foreground: 224 71.4% 4.1%;
+                --destructive: 0 62.8% 30.6%;
+                --destructive-foreground: 0 0% 98%;
+                --border: 0 0% 89.8%;
+                --input: 0 0% 89.8%;
+                --ring: 0 84.2% 60.2%;
+                --radius: 0.75rem;
+            }
+
+            .dark {
+                --background: 224 71.4% 4.1%;
+                --foreground: 0 0% 98%;
+                --card: 224 71.4% 5.5%;
+                --card-foreground: 0 0% 98%;
+                --popover: 224 71.4% 4.1%;
+                --popover-foreground: 0 0% 98%;
+                --primary: 0 84.2% 60.2%;
+                --primary-foreground: 0 0% 98%;
+                --secondary: 220 14.3% 15%;
+                --secondary-foreground: 0 0% 98%;
+                --muted: 220 14.3% 15%;
+                --muted-foreground: 220 8.9% 60%;
+                --accent: 220 14.3% 15%;
+                --accent-foreground: 0 0% 98%;
+                --destructive: 0 62.8% 30.6%;
+                --destructive-foreground: 0 0% 98%;
+                --border: 220 13% 20%;
+                --input: 220 13% 20%;
+                --ring: 0 84.2% 60.2%;
+            }
+        }
+        @layer base {
+          * {
+            @apply border-border;
+          }
+          body {
+            @apply bg-background text-foreground;
+            font-family: Inter, sans-serif;
+          }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.7.1",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
+    "lucide-react": "https://esm.sh/lucide-react@^0.536.0",
+    "jspdf": "https://esm.sh/jspdf@^3.0.1",
+    "date-fns": "https://esm.sh/date-fns@^4.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
